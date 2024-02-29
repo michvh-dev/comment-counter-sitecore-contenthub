@@ -5,10 +5,11 @@ import { waitForElement } from "../../utils/waitForElement";
 const COMMENTS_ID = "tab-comments";
 
 export default function createExternalRoot() {
-  const container = document.getElementById(COMMENTS_ID);
+  let container = document.getElementById(COMMENTS_ID);
   return {
     render(context: any) {
       const renderComp = (parent: HTMLElement) => {
+        container = parent;
         ReactDOM.render(
           <CommentCounter assetId={context.options.entityId} />,
           parent
