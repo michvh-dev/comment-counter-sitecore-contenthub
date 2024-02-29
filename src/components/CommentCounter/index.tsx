@@ -8,10 +8,10 @@ export default function createExternalRoot() {
   const container = document.getElementById(COMMENTS_ID);
   return {
     render(context: any) {
-      const renderComp = (c: HTMLElement) => {
+      const renderComp = (parent: HTMLElement) => {
         ReactDOM.render(
           <CommentCounter assetId={context.options.entityId} />,
-          c
+          parent
         );
       };
       // Because we try to render an element that is not the container but another one "tab-comments" added logic to wait on component
